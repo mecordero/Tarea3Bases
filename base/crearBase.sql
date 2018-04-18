@@ -109,9 +109,8 @@ CREATE TABLE [dbo].[ESTUDIANTE](
 	[carnet] [int] NOT NULL,
 	[cedula] [int] NOT NULL,
 	[nombre] [nchar](30) NOT NULL,
-	[id_carrera] [int] NULL,
-	[foto] [image] NOT NULL,
-	[videoCV] [varbinary](max) NOT NULL,
+	[foto] [image] NULL,
+	[videoCV] [varbinary](max) NULL,
  CONSTRAINT [PK_ESTUDIANTE] PRIMARY KEY CLUSTERED 
 (
 	[carnet] ASC
