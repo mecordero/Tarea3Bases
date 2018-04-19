@@ -63,4 +63,97 @@
       <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.AgregarEstudianteEnCarrera" Method="AgregarEstudianteEnCarrera">
+    <Parameter Name="carnetEstudiante" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_carrera" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_ingreso" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BorrarCarrera" Method="BorrarCarrera">
+    <Parameter Name="id_carrera" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BorrarEstudiante" Method="BorrarEstudiante">
+    <Parameter Name="carnet" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CantidadEstudiantes" Method="CantidadEstudiantes1">
+    <ElementType Name="CantidadEstudiantesResult1">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesAño" Method="CantidadEstudiantesAño1">
+    <Parameter Name="año" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CantidadEstudiantesAñoResult1">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesCarrera" Method="CantidadEstudiantesCarrera1">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="CantidadEstudiantesCarreraResult1">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesCarreraAño" Method="CantidadEstudiantesCarreraAño1">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="año" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CantidadEstudiantesCarreraAñoResult1">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EstudiantesCarrera" Method="EstudiantesCarrera1">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="EstudiantesCarreraResult1">
+      <Column Name="carnet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="videoCV" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertarCarrera" Method="InsertarCarrera">
+    <Parameter Name="id_carrera" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="encargado" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="ubicacion" Type="System.String" DbType="NChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertarEstudiante" Method="InsertarEstudiante">
+    <Parameter Name="carnet" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ModificarCarrera" Method="ModificarCarrera">
+    <Parameter Name="id_carreraViejo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_carreraNuevo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombreNuevo" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="encargadoNuevo" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="ubicacionNueva" Type="System.String" DbType="NChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ModificarEstudiante" Method="ModificarEstudiante">
+    <Parameter Name="carnetViejo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="carnetNuevo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cedulaNueva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombreNuevo" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MostrarCarreras" Method="MostrarCarreras">
+    <ElementType Name="MostrarCarrerasResult">
+      <Column Name="id_carrera" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="encargado" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MostrarEstudiantes" Method="MostrarEstudiantes">
+    <ElementType Name="MostrarEstudiantesResult">
+      <Column Name="carnet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="videoCV" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -88,6 +88,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrera.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="LinqAzure.designer.cs">
       <AutoGen>True</AutoGen>

@@ -129,6 +129,104 @@ namespace Tarea3Bases2
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carrera, año);
 			return ((ISingleResult<CantidadEstudiantesCarreraAñoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AgregarEstudianteEnCarrera")]
+		public int AgregarEstudianteEnCarrera([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> carnetEstudiante, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_carrera, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_ingreso)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carnetEstudiante, id_carrera, fecha_ingreso);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BorrarCarrera")]
+		public int BorrarCarrera([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_carrera)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_carrera);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BorrarEstudiante")]
+		public int BorrarEstudiante([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> carnet)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carnet);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CantidadEstudiantes")]
+		public ISingleResult<CantidadEstudiantesResult1> CantidadEstudiantes1()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<CantidadEstudiantesResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CantidadEstudiantesAño")]
+		public ISingleResult<CantidadEstudiantesAñoResult1> CantidadEstudiantesAño1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> año)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), año);
+			return ((ISingleResult<CantidadEstudiantesAñoResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CantidadEstudiantesCarrera")]
+		public ISingleResult<CantidadEstudiantesCarreraResult1> CantidadEstudiantesCarrera1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string carrera)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carrera);
+			return ((ISingleResult<CantidadEstudiantesCarreraResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CantidadEstudiantesCarreraAño")]
+		public ISingleResult<CantidadEstudiantesCarreraAñoResult1> CantidadEstudiantesCarreraAño1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string carrera, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> año)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carrera, año);
+			return ((ISingleResult<CantidadEstudiantesCarreraAñoResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EstudiantesCarrera")]
+		public ISingleResult<EstudiantesCarreraResult1> EstudiantesCarrera1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string carrera)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carrera);
+			return ((ISingleResult<EstudiantesCarreraResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarCarrera")]
+		public int InsertarCarrera([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_carrera, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string encargado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(50)")] string ubicacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_carrera, nombre, encargado, ubicacion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarEstudiante")]
+		public int InsertarEstudiante([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> carnet, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nombre)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carnet, cedula, nombre);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ModificarCarrera")]
+		public int ModificarCarrera([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_carreraViejo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_carreraNuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string nombreNuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string encargadoNuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(50)")] string ubicacionNueva)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_carreraViejo, id_carreraNuevo, nombreNuevo, encargadoNuevo, ubicacionNueva);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ModificarEstudiante")]
+		public int ModificarEstudiante([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> carnetViejo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> carnetNuevo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedulaNueva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nombreNuevo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), carnetViejo, carnetNuevo, cedulaNueva, nombreNuevo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MostrarCarreras")]
+		public ISingleResult<MostrarCarrerasResult> MostrarCarreras()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<MostrarCarrerasResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MostrarEstudiantes")]
+		public ISingleResult<MostrarEstudiantesResult> MostrarEstudiantes()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<MostrarEstudiantesResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CARRERA")]
@@ -892,6 +990,386 @@ namespace Tarea3Bases2
 				if ((this._Cantidad != value))
 				{
 					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CantidadEstudiantesResult1
+	{
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public CantidadEstudiantesResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CantidadEstudiantesAñoResult1
+	{
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public CantidadEstudiantesAñoResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CantidadEstudiantesCarreraResult1
+	{
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public CantidadEstudiantesCarreraResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CantidadEstudiantesCarreraAñoResult1
+	{
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public CantidadEstudiantesCarreraAñoResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class EstudiantesCarreraResult1
+	{
+		
+		private int _carnet;
+		
+		private int _cedula;
+		
+		private string _nombre;
+		
+		private System.Data.Linq.Binary _foto;
+		
+		private System.Data.Linq.Binary _videoCV;
+		
+		public EstudiantesCarreraResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_carnet", DbType="Int NOT NULL")]
+		public int carnet
+		{
+			get
+			{
+				return this._carnet;
+			}
+			set
+			{
+				if ((this._carnet != value))
+				{
+					this._carnet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL")]
+		public int cedula
+		{
+			get
+			{
+				return this._cedula;
+			}
+			set
+			{
+				if ((this._cedula != value))
+				{
+					this._cedula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_foto", DbType="Image")]
+		public System.Data.Linq.Binary foto
+		{
+			get
+			{
+				return this._foto;
+			}
+			set
+			{
+				if ((this._foto != value))
+				{
+					this._foto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_videoCV", DbType="VarBinary(MAX)")]
+		public System.Data.Linq.Binary videoCV
+		{
+			get
+			{
+				return this._videoCV;
+			}
+			set
+			{
+				if ((this._videoCV != value))
+				{
+					this._videoCV = value;
+				}
+			}
+		}
+	}
+	
+	public partial class MostrarCarrerasResult
+	{
+		
+		private int _id_carrera;
+		
+		private string _nombre;
+		
+		private string _encargado;
+		
+		private string _ubicacion;
+		
+		public MostrarCarrerasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_carrera", DbType="Int NOT NULL")]
+		public int id_carrera
+		{
+			get
+			{
+				return this._id_carrera;
+			}
+			set
+			{
+				if ((this._id_carrera != value))
+				{
+					this._id_carrera = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_encargado", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string encargado
+		{
+			get
+			{
+				return this._encargado;
+			}
+			set
+			{
+				if ((this._encargado != value))
+				{
+					this._encargado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ubicacion", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string ubicacion
+		{
+			get
+			{
+				return this._ubicacion;
+			}
+			set
+			{
+				if ((this._ubicacion != value))
+				{
+					this._ubicacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class MostrarEstudiantesResult
+	{
+		
+		private int _carnet;
+		
+		private int _cedula;
+		
+		private string _nombre;
+		
+		private System.Data.Linq.Binary _foto;
+		
+		private System.Data.Linq.Binary _videoCV;
+		
+		public MostrarEstudiantesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_carnet", DbType="Int NOT NULL")]
+		public int carnet
+		{
+			get
+			{
+				return this._carnet;
+			}
+			set
+			{
+				if ((this._carnet != value))
+				{
+					this._carnet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula", DbType="Int NOT NULL")]
+		public int cedula
+		{
+			get
+			{
+				return this._cedula;
+			}
+			set
+			{
+				if ((this._cedula != value))
+				{
+					this._cedula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_foto", DbType="Image")]
+		public System.Data.Linq.Binary foto
+		{
+			get
+			{
+				return this._foto;
+			}
+			set
+			{
+				if ((this._foto != value))
+				{
+					this._foto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_videoCV", DbType="VarBinary(MAX)")]
+		public System.Data.Linq.Binary videoCV
+		{
+			get
+			{
+				return this._videoCV;
+			}
+			set
+			{
+				if ((this._videoCV != value))
+				{
+					this._videoCV = value;
 				}
 			}
 		}
