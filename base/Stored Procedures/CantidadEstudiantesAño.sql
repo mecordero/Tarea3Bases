@@ -21,11 +21,13 @@ BEGIN
 
     -- Insert statements for procedure here
 	SELECT count(*) as Cantidad
+	FROM
+	(SELECT distinct e.carnet
 	FROM CARRERA c
 	INNER JOIN ESTUDIANTEXCARRERA ec
 	on c.id_carrera = ec.carrera
 	INNER JOIN ESTUDIANTE e
 	on e.carnet = ec.estudiante
-	WHERE YEAR(ec.fecha_ingreso) = @año
+	WHERE YEAR(ec.fecha_ingreso) = @año) as est
 END
 GO

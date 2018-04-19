@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqAzure">
+  <DataContextMoniker Name="/LinqAzureDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c7a3d249-b165-4634-8813-eda7b80e067e" absoluteBounds="1, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqAzureDataContext/CARRERA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa25f95a-e64b-4dfe-98e1-d1385886b153" absoluteBounds="1.0150000000000001, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b660a4e5-34f1-4e00-b210-0af27776a3ab" absoluteBounds="3.125, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqAzureDataContext/ESTUDIANTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35a2d532-c862-4669-a4cb-113252908ab6" absoluteBounds="3.14, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de35d283-6bed-4abc-8884-3e29689bc207" absoluteBounds="2, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqAzureDataContext/ESTUDIANTEXCARRERA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d831f350-9542-44ab-96fe-957914e517a9" absoluteBounds="2.015, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.20359537760417); (2.5 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqAzureDataContext/CARRERA/CARRERA_ESTUDIANTEXCARRERA" />
+      <nodes>
+        <classShapeMoniker Id="c7a3d249-b165-4634-8813-eda7b80e067e" />
+        <classShapeMoniker Id="de35d283-6bed-4abc-8884-3e29689bc207" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5625 : 3.27089680989583); (3.5625 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqAzureDataContext/ESTUDIANTE/ESTUDIANTE_ESTUDIANTEXCARRERA" />
+      <nodes>
+        <classShapeMoniker Id="b660a4e5-34f1-4e00-b210-0af27776a3ab" />
+        <classShapeMoniker Id="de35d283-6bed-4abc-8884-3e29689bc207" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

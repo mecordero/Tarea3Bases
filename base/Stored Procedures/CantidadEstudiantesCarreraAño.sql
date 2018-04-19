@@ -20,13 +20,15 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT count(*) as Cantidad
+	SELECT COUNT(*) as Cantidad
+	FROM
+	(SELECT distinct e.carnet
 	FROM CARRERA c
 	INNER JOIN ESTUDIANTEXCARRERA ec
 	on c.id_carrera = ec.carrera
 	INNER JOIN ESTUDIANTE e
 	on e.carnet = ec.estudiante
 	WHERE c.nombre = @carrera and
-		YEAR(ec.fecha_ingreso) = @año
+		YEAR(ec.fecha_ingreso) = @año) as est
 END
 GO

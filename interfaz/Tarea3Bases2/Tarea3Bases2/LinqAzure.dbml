@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tarea3bases2" Class="LinqAzureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=tarea3server.database.windows.net;Initial Catalog=tarea3bases2;Persist Security Info=True;User ID=adminBases" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="tarea3bases2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CARRERA" Member="CARRERAs">
+    <Type Name="CARRERA">
+      <Column Name="id_carrera" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="encargado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CARRERA_ESTUDIANTEXCARRERA" Member="ESTUDIANTEXCARRERAs" ThisKey="id_carrera" OtherKey="carrera" Type="ESTUDIANTEXCARRERA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ESTUDIANTE" Member="ESTUDIANTEs">
+    <Type Name="ESTUDIANTE">
+      <Column Name="carnet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="videoCV" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ESTUDIANTE_ESTUDIANTEXCARRERA" Member="ESTUDIANTEXCARRERAs" ThisKey="carnet" OtherKey="estudiante" Type="ESTUDIANTEXCARRERA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ESTUDIANTEXCARRERA" Member="ESTUDIANTEXCARRERAs">
+    <Type Name="ESTUDIANTEXCARRERA">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="estudiante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="carrera" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_ingreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="CARRERA_ESTUDIANTEXCARRERA" Member="CARRERA1" ThisKey="carrera" OtherKey="id_carrera" Type="CARRERA" IsForeignKey="true" />
+      <Association Name="ESTUDIANTE_ESTUDIANTEXCARRERA" Member="ESTUDIANTE1" ThisKey="estudiante" OtherKey="carnet" Type="ESTUDIANTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CantidadEstudiantes" Method="CantidadEstudiantes">
+    <ElementType Name="CantidadEstudiantesResult">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EstudiantesCarrera" Method="EstudiantesCarrera">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="EstudiantesCarreraResult">
+      <Column Name="carnet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="videoCV" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesAño" Method="CantidadEstudiantesAño">
+    <Parameter Name="año" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CantidadEstudiantesAñoResult">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesCarrera" Method="CantidadEstudiantesCarrera">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="CantidadEstudiantesCarreraResult">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CantidadEstudiantesCarreraAño" Method="CantidadEstudiantesCarreraAño">
+    <Parameter Name="carrera" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="año" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CantidadEstudiantesCarreraAñoResult">
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
